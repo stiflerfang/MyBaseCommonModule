@@ -1,0 +1,28 @@
+ext {
+  minSdkVersion = 14
+  compileSdkVersion = 25
+  targetSdkVersion = 25
+  buildToolsVersion = '25.0.2'
+
+  dagger2Version = '2.9'
+  annotationVersion = '10.0-b28'
+  rxJavaVersion = '2.1.0'
+  rxAndroidVersion = '2.0.1'
+  rxJavaAdapterVersion = '2.3.0'
+  retrofitVersion = '2.3.0'
+  glideVersion = '4.0.0-RC1'
+  glideOKHttpVersion = '1.4.0@aar'
+  supportVersion = '25.3.1'
+  persistentCookieJarVersion = 'v1.0.1'
+  okhttpVersion = '3.8.1'
+  butterknifeVersion = '8.7.0'
+  eventBusVersion = '3.0.0'
+  greedDaoVersion = '3.2.2'
+  loggerVersion = '2.1.1'
+  multidexVersion = '1.0.1'
+  sophixVersion = '3.0.8'
+  leakcanaryVersion = '1.5.1'
+  ultimaterecyclerviewVersion = '0.7.2'
+  baseRecyclerViewAdapterHelperVersion = '2.9.25'
+  rxGalleryFinalVersion = '1.0.9'
+}

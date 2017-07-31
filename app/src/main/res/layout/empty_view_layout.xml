@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.stifler.basecommonmodule.demo.widget.EmptyViewLayout
+        android:id="@+id/list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:buttonColor="@color/color_white"
+        app:buttonSize="@dimen/text_size_32px"
+        app:emptytitle="@string/loading_data_str"
+        app:logoNoData="@mipmap/wifi_no_data"
+        app:titleColor="@color/color_a6abb6"
+        app:titleSize="@dimen/text_size_30px" />
+</LinearLayout>

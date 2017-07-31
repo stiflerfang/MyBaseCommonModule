@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BaseCommonModuleDemo</string>
+    <string name="str_channel_name">ticket_android</string>
+    <string name="str_km">%1$skm</string>
+    <string name="str_m">%1$sm</string>
+    <string name="loading_data_str">正在努力加载...</string>
+    <string name="transient_no_data">网络不给力，数据获取失败</string>
+    <string name="str_request_failure">请求失败，请稍后重试</string>
+    <string name="no_data_str">您还没有记录哦～</string>
+    <string name="net_retry">重新加载</string>
+    <string name="str_cinema_price_new_none">钱宝价：暂无</string>
+    <string name="str_cinema_price">钱宝价：￥%1$s起</string>
+    <string name="str_cinema_price_new">钱宝价：￥%1$s起</string>
+    <string name="movie_time_str">%s 上映</string>
+    <string name="str_undetermined">待定</string>
+    <string name="str_yuan">%s元</string>
+    <string name="str_venue">场馆：%1$s</string>
+    <string name="str_city">城市：%1$s</string>
+    <string name="time">时间：%s</string>
+</resources>

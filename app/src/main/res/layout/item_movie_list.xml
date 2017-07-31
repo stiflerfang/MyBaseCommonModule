@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_gray_selector"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp">
+
+        <FrameLayout
+            android:id="@+id/fl_movie"
+            android:layout_width="64dp"
+            android:layout_height="84dp">
+
+            <ImageView
+                android:id="@+id/iv_movie"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@mipmap/movieposter_default"
+                android:padding="1px"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/iv_show_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/fl_movie">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_want_to_see">
+
+
+                <TextView
+                    android:id="@+id/tv_movie_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/ll_grade"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="世界末日"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/text_size_30px" />
+
+                <LinearLayout
+                    android:id="@+id/ll_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_movie_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/mgv_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.9"
+                        android:textColor="@color/color_ff0000"
+                        android:textSize="@dimen/text_size_30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分"
+                        android:textColor="@color/color_ff0000"
+                        android:textSize="@dimen/text_size_20px" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_movie_des"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_movie_name"
+                    android:layout_marginTop="1dp"
+                    android:ellipsize="end"
+                    android:text="豪华真实版的扯淡大片"
+                    android:textColor="@color/color_525252"
+                    android:textSize="@dimen/text_size_24px" />
+
+                <TextView
+                    android:id="@+id/tv_movie_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_movie_des"
+                    android:layout_marginTop="1dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="喜剧/美国"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_24px" />
+
+                <TextView
+                    android:id="@+id/tv_movie_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_movie_type"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_22px" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_want_to_see"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/color_999999"
+                android:drawableTop="@mipmap/movie_follow"
+                android:drawablePadding="5dp"
+                android:text="我想看"
+                android:textSize="@dimen/text_size_24px"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'org.greenrobot.greendao'
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //dagger2
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Version}"
+    compile "com.google.dagger:dagger:${rootProject.ext.dagger2Version}"
+    compile "org.glassfish:javax.annotation:${rootProject.ext.annotationVersion}"
+    //rxjava
+    compile "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJavaVersion}"
+    compile "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.rxJavaAdapterVersion}"
+    //retrofit
+    compile "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofitVersion}"
+    //okhttp
+    compile "com.squareup.okhttp3:okhttp:${rootProject.ext.okhttpVersion}"
+    compile "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okhttpVersion}"
+    //persistentCookieJar
+    compile "com.github.franmontiel:PersistentCookieJar:$rootProject.persistentCookieJarVersion"
+    //glide
+    compile "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
+    compile "com.github.bumptech.glide:okhttp3-integration:${rootProject.ext.glideOKHttpVersion}"
+    //butterknife
+    compile "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
+    //eventbus
+    compile "org.greenrobot:eventbus:${rootProject.ext.eventBusVersion}"
+//    //greendao
+    compile "org.greenrobot:greendao:${rootProject.ext.greedDaoVersion}"
+    //logger
+    compile "com.orhanobut:logger:${rootProject.ext.loggerVersion}"
+    //multidex
+    compile "com.android.support:multidex:${rootProject.ext.multidexVersion}"
+    //sophix
+    compile ("com.aliyun.ams:alicloud-android-hotfix:${rootProject.ext.sophixVersion}")
+    //BaseRecyclerViewAdapterHelper
+    compile "com.github.CymChad:BaseRecyclerViewAdapterHelper:${rootProject.ext.baseRecyclerViewAdapterHelperVersion}"
+    //rxgalleryfinal
+    compile "cn.finalteam.rxgalleryfinal:library:${rootProject.ext.rxGalleryFinalVersion}"
+    //leakcanary
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${rootProject.ext.leakcanaryVersion}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${rootProject.ext.leakcanaryVersion}"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${rootProject.ext.leakcanaryVersion}"
+
+    //support
+    compile "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+    compile "com.android.support:design:${rootProject.ext.supportVersion}"
+    compile "com.android.support:support-compat:${rootProject.ext.supportVersion}"
+    compile "com.android.support:support-v4:${rootProject.ext.supportVersion}"
+    compile "com.android.support:support-v13:${rootProject.ext.supportVersion}"
+    compile "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 292
+        versionName "2.9.2"
+        multiDexEnabled=true
+        ndk{
+            abiFilters "armeabi","armeabi-v7a"
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url 'https://oss.jfrog.org/libs-snapshot' }
+        maven { url "https://jitpack.io" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        jumboMode true
+    }
+
+}

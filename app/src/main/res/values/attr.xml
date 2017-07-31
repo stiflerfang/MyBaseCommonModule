@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="code">
+        <attr name="codeNumber" format="integer"/>
+        <attr name="codeSpace" format="dimension"/>
+        <attr name="lengthSide" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="inputType" format="integer"/>
+    </declare-styleable>
+
+
+    <!-- MineCustomLayout自定义的属性 -->
+    <declare-styleable name="MineCustomLayout">
+        <attr name="src" format="reference"/>
+        <attr name="text" format="string"/>
+        <attr name="showRightImage" format="boolean"/>
+        <attr name="showLeftImage" format="boolean"/>
+        <attr name="rightText" format="string"/>
+        <attr name="showRightText" format="boolean"/>
+        <attr name="line" format="boolean"/>
+    </declare-styleable>
+
+    <!-- 图片选择的控件 -->
+    <declare-styleable name="SelectPictureLayout">
+        <attr name="maxPicSize" format="integer"/>
+        <attr name="picNumColumns" format="integer"/>
+    </declare-styleable>
+
+    <!-- 自定义图片控件的宽高比例 -->
+    <declare-styleable name="CustomImageView">
+        <attr name="aspectRatio" format="float"/>
+    </declare-styleable>
+
+    <!-- 内容输入框的控件 -->
+    <declare-styleable name="InputContentWithNumberLayout">
+        <attr name="maxContentSize" format="integer"/>
+        <attr name="contentHint" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="EmptyViewLayout">
+        <attr name="emptylogo" format="reference" />
+        <attr name="logoNoData" format="reference" />
+        <attr name="emptytitle" format="reference|string" />
+        <attr name="titleColor" format="reference|color" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="buttonColor" format="reference|color" />
+        <attr name="buttonSize" format="dimension" />
+    </declare-styleable>
+</resources>

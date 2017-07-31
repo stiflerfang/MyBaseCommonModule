@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@mipmap/icon_contact"
+        android:title="菜单1"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/action_share"
+        android:title="菜单2"
+        android:icon="@mipmap/icon_gain_address"
+        app:showAsAction="always" />
+
+    <!--app:actionLayout="@layout/menu_action_layout"-->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@mipmap/mine_icon_seller"
+        android:title="菜单3"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/action_1"
+                    android:icon="@mipmap/mine_icon_seller"
+                    android:title="菜单4"
+                    app:actionLayout="@layout/menu_action_layout"
+                    app:showAsAction="ifRoom" />
+                <item
+                    android:id="@+id/action_2"
+                    android:icon="@mipmap/mine_icon_seller"
+                    android:title="菜单5"
+                    app:showAsAction="ifRoom" />
+                <item
+                    android:id="@+id/action_3"
+                    android:icon="@mipmap/mine_icon_seller"
+                    android:title="菜单6"
+                    app:showAsAction="ifRoom" />
+            </group>
+        </menu>
+    </item>
+</menu>
