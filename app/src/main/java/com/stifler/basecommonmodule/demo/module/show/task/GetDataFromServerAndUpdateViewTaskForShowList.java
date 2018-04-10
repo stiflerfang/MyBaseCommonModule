@@ -52,6 +52,23 @@ public class GetDataFromServerAndUpdateViewTaskForShowList extends BaseNetWorkTa
     }
 
     @Override
+    public void onResponse(Message message) {
+        dealWithNetWorkResponse(message, true);
+    }
+
+    @Override
+    public boolean onFailure(Message message) {
+        dealWithNetWorkResponse(message, false);
+        return true;
+    }
+
+    private void dealWithNetWorkResponse(Message message, boolean isSuccess) {
+        setMessage(message);
+        setRequestSuccess(isSuccess);
+        updateViewForTask();
+    }
+
+    @Override
     public boolean doTaskOnBackground() {
         Map<String, String> map = new HashMap<String,String>();
         map.put("playTime","-1");
@@ -60,7 +77,7 @@ public class GetDataFromServerAndUpdateViewTaskForShowList extends BaseNetWorkTa
         map.put("pageIndex","1");
         map.put("showType","-1");
         map.put("searchWord","");
-        appHttp.getShowListFromServer(Constant.REQ_CODE_SHOW_LIST,map,callback);
+        appHttp.getShowListFromServer(Constant.REQ_CODE_SHOW_LIST,map,this);
         return true;
     }
 

@@ -89,4 +89,14 @@ public class GetDataFromServerAndUpdateViewTaskForMovieList extends BaseNetWorkT
         movieListPresenter.getMovieListView().getAdapter().notifyDataSetChanged();
         movieListPresenter.getMovieListView().getUltimateRecyclerView().setAdapter(movieListPresenter.getMovieListView().getAdapter());
     }
+
+    @Override
+    public void onResponse(Message message) {
+
+    }
+
+    @Override
+    public boolean onFailure(Message message) {
+        return false;
+    }
 }

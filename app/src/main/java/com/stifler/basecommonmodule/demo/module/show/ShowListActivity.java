@@ -18,6 +18,9 @@ import com.stifler.basecommonmodule.demo.module.show.presenter.ShowListPresenter
 import com.stifler.basecommonmodule.demo.module.show.view.ShowListView;
 import com.stifler.basecommonmodule.demo.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -121,5 +124,31 @@ public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.R
     @Override
     public void onLoadMoreRequested() {
 
+    }
+
+    class Industry{
+        int id;
+        String name;
+        int parentId;
+        List<Industry> lists = new ArrayList<Industry>();
+
+        //初次拿到列表的时候执行一下这个方法，给每个子分类增加一个全部分类选项
+        public void addAllTypeToList(){
+            if(lists != null && !lists.isEmpty()){
+                //lists存放的就是一级分类的列表
+                for(Industry industry:lists){
+                    //industry存放的是每一个主分类的item，industry.lists存放的是子分类的列表
+                    if(industry.lists != null && !industry.lists.isEmpty()){
+                        Industry tempIndustry = new Industry();
+                        tempIndustry.id = industry.id;
+                        tempIndustry.parentId = -1;
+                        tempIndustry.name = "全部分类";
+                        industry.lists.add(0,industry);
+                    }
+                }
+            }
+        }
+
+        //获取点击的子分类条目的时候，默认取id，如果id为-1，那么就取parentId
     }
 }

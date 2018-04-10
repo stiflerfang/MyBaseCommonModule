@@ -43,7 +43,7 @@ public class BaseObserver implements Observer<Message> {
                 }else if(message.arg1 == BaseStatus.RESPONSE_CODE_SESSION_TIME_OUT){
                     callback.onSessionTimeOut();
                 }else{
-                    if(callback.onFailure(message)){
+                    if(!callback.onFailure(message)){
                         Toast.makeText(DemoApplication.getIntance(),message.obj.toString(),Toast.LENGTH_LONG).show();
                     }
                 }
@@ -61,7 +61,7 @@ public class BaseObserver implements Observer<Message> {
             message.what = reqCode;
             message.arg1 = BaseStatus.RESPONSE_CODE_FAILURE;
             message.obj = Utils.getString(R.string.str_request_failure);
-            if(callback.onFailure(message)){
+            if(!callback.onFailure(message)){
                 Toast.makeText(DemoApplication.getIntance(),R.string.str_request_failure,Toast.LENGTH_LONG).show();
             }
         }

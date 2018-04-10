@@ -95,4 +95,14 @@ public class GetDataFromServerAndUpdateViewTaskForCinemaList extends BaseNetWork
         cinemaListPresenter.getCinemaListView().getAdapter().notifyDataSetChanged();
         cinemaListPresenter.getCinemaListView().getUltimateRecyclerView().setAdapter(cinemaListPresenter.getCinemaListView().getAdapter());
     }
+
+    @Override
+    public void onResponse(Message message) {
+
+    }
+
+    @Override
+    public boolean onFailure(Message message) {
+        return false;
+    }
 }

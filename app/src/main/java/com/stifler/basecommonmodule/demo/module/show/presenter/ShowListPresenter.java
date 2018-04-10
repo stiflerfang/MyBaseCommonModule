@@ -58,12 +58,12 @@ public class ShowListPresenter extends IBasePresenter {
 
     @Override
     public void onResponse(Message message) {
-        dealWithNetWorkResponse(message, true);
+//        dealWithNetWorkResponse(message, true);
     }
 
     @Override
     public boolean onFailure(Message message) {
-        dealWithNetWorkResponse(message, false);
+//        dealWithNetWorkResponse(message, false);
         return true;
     }
 

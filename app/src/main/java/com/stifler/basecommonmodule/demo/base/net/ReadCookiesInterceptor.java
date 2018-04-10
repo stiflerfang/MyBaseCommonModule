@@ -19,8 +19,8 @@ public class ReadCookiesInterceptor implements Interceptor {
     @Override
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Request.Builder builder = chain.request().newBuilder();
-        Set<String> preferences = new HashSet<String>();
-        preferences = (HashSet) PreferenceManager.getDefaultSharedPreferences(
+        Set<String> preferences = new HashSet();
+        preferences = PreferenceManager.getDefaultSharedPreferences(
                 DemoApplication.getIntance()).getStringSet(Constant.SP_FILE_COOKIE, preferences);
         for (String cookie : preferences) {
             builder.addHeader("Cookie", cookie);
