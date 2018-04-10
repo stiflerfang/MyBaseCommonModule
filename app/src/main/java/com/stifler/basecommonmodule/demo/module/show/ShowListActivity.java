@@ -7,7 +7,9 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.stifler.basecommonmodule.demo.R;
@@ -17,6 +19,7 @@ import com.stifler.basecommonmodule.demo.module.show.adapter.ShowListAdapter;
 import com.stifler.basecommonmodule.demo.module.show.presenter.ShowListPresenter;
 import com.stifler.basecommonmodule.demo.module.show.view.ShowListView;
 import com.stifler.basecommonmodule.demo.utils.Utils;
+import com.stifler.basecommonmodule.demo.widget.EmptyViewLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,10 @@ import butterknife.BindView;
 
 public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.RequestLoadMoreListener,
         ShowListView,SwipeRefreshLayout.OnRefreshListener {
+
+    protected EmptyViewLayout emptyViewLayout;
+    private View view;
+
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -48,9 +55,11 @@ public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.R
         showListAdapter.setOnLoadMoreListener(this,rv_list);
 //        showListAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
 
-        showListAdapter.setEmptyView(R.layout.empty_view_layout);
+        showListAdapter.setEmptyView(view);
 
         showListPresenter.getShowListFromServer();
+
+        rv_list.setAdapter(showListAdapter);
     }
 
     @Override
@@ -83,6 +92,14 @@ public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.R
 
         rv_list.setLayoutManager(new LinearLayoutManager(this));
 
+        view  = LayoutInflater.from(this).inflate(R.layout.empty_view_layout,null);
+        emptyViewLayout = (EmptyViewLayout) view.findViewById(R.id.list_empty);
+        emptyViewLayout.findViewById(R.id.tv_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showListPresenter.getShowListFromServer();
+            }
+        });
     }
 
     public static void startActivity(Context context) {
@@ -124,6 +141,11 @@ public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.R
     @Override
     public void onLoadMoreRequested() {
 
+    }
+
+    @Override
+    public View getEmptyViewLayout() {
+        return emptyViewLayout;
     }
 
     class Industry{

@@ -31,7 +31,7 @@ public class CinemaListActivity extends RecyclerViewActivity implements CinemaLi
 
     @Override
     public void initData() {
-        cinemaListPresenter.getCinemaListFromServer();
+
     }
 
     @Override
@@ -88,6 +88,8 @@ public class CinemaListActivity extends RecyclerViewActivity implements CinemaLi
         enableRefresh();
         enableItemClick();
 
+        urv_recycler_view.setAdapter(cinemaSimpleRecyclerAdapter);
+        cinemaListPresenter.getCinemaListFromServer();
     }
 
     @Override

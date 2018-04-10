@@ -31,7 +31,7 @@ public class MovieListActivity extends RecyclerViewActivity implements MovieList
 
     @Override
     public void initData() {
-        movieListPresenter.getMovieListFromServer();
+
     }
 
     @Override
@@ -88,6 +88,8 @@ public class MovieListActivity extends RecyclerViewActivity implements MovieList
         enableRefresh();
         enableItemClick();
 
+        urv_recycler_view.setAdapter(cinemaSimpleRecyclerAdapter);
+        movieListPresenter.getMovieListFromServer();
     }
 
     @Override

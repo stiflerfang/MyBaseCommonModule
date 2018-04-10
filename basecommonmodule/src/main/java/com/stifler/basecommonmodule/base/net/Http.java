@@ -4,6 +4,7 @@ import android.os.Message;
 
 import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.orhanobut.logger.Logger;
+import com.stifler.basecommonmodule.base.mvp.IShowLoadingView;
 
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -115,7 +116,7 @@ public class Http {
      * HTTP响应回调
      *
      */
-    public interface HttpCallback {
+    public interface HttpCallback extends IShowLoadingView{
         /**
          * 成功响应
          */
@@ -130,6 +131,7 @@ public class Http {
          * 处理session失效
          */
         void onSessionTimeOut();
+
     }
 
     /**

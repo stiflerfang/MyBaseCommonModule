@@ -179,4 +179,9 @@ public class MovieListPresenter extends IBasePresenter {
         getDataFromServerAndUpdateViewTaskForMovieList.setRequestSuccess(isSuccess);
         getDataFromServerAndUpdateViewTaskForMovieList.updateViewForTask();
     }
+
+    @Override
+    public void showLoadingView() {
+
+    }
 }

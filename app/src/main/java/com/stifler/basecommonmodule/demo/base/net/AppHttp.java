@@ -1,5 +1,6 @@
 package com.stifler.basecommonmodule.demo.base.net;
 
+import com.stifler.basecommonmodule.base.mvp.IShowLoadingView;
 import com.stifler.basecommonmodule.base.net.Http;
 import com.stifler.basecommonmodule.base.mvp.LiftAllTransformer;
 import com.stifler.basecommonmodule.demo.model.movie.MovieListInfo;
@@ -26,7 +27,7 @@ public class AppHttp {
     public void getCinemaListFromServer(final int reqCode, Map<String, String> map,
                                         final Http.HttpCallback callback) {
         Observable<BaseResponse<CinemaListInfo>> call = apiService.getCinemaListFromServer(map);
-        call.compose(LiftAllTransformer.getInstance())
+        call.compose(LiftAllTransformer.getInstance().setiShowLoadingView(callback))
                 .map(new BaseFunction<CinemaListInfo>(reqCode))
                 .subscribe(new BaseObserver(reqCode,callback));
 
@@ -35,7 +36,7 @@ public class AppHttp {
     public void getMovieListFromServer(final int reqCode, Map<String, String> map,
                                         final Http.HttpCallback callback) {
         Observable<BaseResponse<MovieListInfo>> call = apiService.getMovieListFromServer(map);
-        call.compose(LiftAllTransformer.getInstance())
+        call.compose(LiftAllTransformer.getInstance().setiShowLoadingView(callback))
                 .map(new BaseFunction<MovieListInfo>(reqCode))
                 .subscribe(new BaseObserver(reqCode,callback));
 
@@ -44,7 +45,7 @@ public class AppHttp {
     public void getShowListFromServer(final int reqCode, Map<String, String> map,
                                         final Http.HttpCallback callback) {
         Observable<BaseResponse<ShowListInfo>> call = apiService.getShowListFromServer(map);
-        call.compose(LiftAllTransformer.getInstance())
+        call.compose(LiftAllTransformer.getInstance().setiShowLoadingView(callback))
                 .map(new BaseFunction<MovieListInfo>(reqCode))
                 .subscribe(new BaseObserver(reqCode,callback));
 

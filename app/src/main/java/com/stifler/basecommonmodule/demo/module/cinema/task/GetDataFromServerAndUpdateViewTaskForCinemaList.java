@@ -105,4 +105,9 @@ public class GetDataFromServerAndUpdateViewTaskForCinemaList extends BaseNetWork
     public boolean onFailure(Message message) {
         return false;
     }
+
+    @Override
+    public void showLoadingView() {
+
+    }
 }

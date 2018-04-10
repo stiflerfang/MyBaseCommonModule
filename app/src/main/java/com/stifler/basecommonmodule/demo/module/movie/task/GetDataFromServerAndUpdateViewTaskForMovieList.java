@@ -99,4 +99,9 @@ public class GetDataFromServerAndUpdateViewTaskForMovieList extends BaseNetWorkT
     public boolean onFailure(Message message) {
         return false;
     }
+
+    @Override
+    public void showLoadingView() {
+
+    }
 }

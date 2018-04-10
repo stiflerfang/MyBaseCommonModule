@@ -40,7 +40,7 @@ public class ShowListPresenter extends IBasePresenter {
 
     public void getShowListFromServer() {
         initTasks();
-        setRefreshStatus(true);
+//        setRefreshStatus(true);
         getDataFromServerAndUpdateViewTaskForShowList.doTaskOnBackground();
     }
 
@@ -71,5 +71,10 @@ public class ShowListPresenter extends IBasePresenter {
         getDataFromServerAndUpdateViewTaskForShowList.setMessage(message);
         getDataFromServerAndUpdateViewTaskForShowList.setRequestSuccess(isSuccess);
         getDataFromServerAndUpdateViewTaskForShowList.updateViewForTask();
+    }
+
+    @Override
+    public void showLoadingView() {
+
     }
 }

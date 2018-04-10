@@ -29,7 +29,7 @@ import butterknife.BindView;
 public abstract class RecyclerViewActivity extends BaseActivity {
 
     @BindView(R.id.urv_recycle_view)
-    UltimateRecyclerView urv_recycler_view;
+    public UltimateRecyclerView urv_recycler_view;
     protected EmptyViewLayout emptyViewLayout;
 
     public UltimateRecyclerView getRecyclerView(){
