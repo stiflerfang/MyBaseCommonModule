@@ -101,6 +101,10 @@
             android:name="com.stifler.basecommonmodule.demo.module.show.ShowListActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.stifler.basecommonmodule.demo.module.main.HomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
 
         <receiver

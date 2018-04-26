@@ -1,5 +1,6 @@
 package com.stifler.basecommonmodule.demo.base.config;
 
+import com.stifler.basecommonmodule.demo.BuildConfig;
 import com.stifler.basecommonmodule.demo.utils.Utils;
 
 /**
@@ -7,6 +8,7 @@ import com.stifler.basecommonmodule.demo.utils.Utils;
  */
 
 public class Constant {
+    public static boolean isDebug = BuildConfig.DEBUG;
     public static String PHONE_NETWORK_TYPE = "wifi";
     public static String SP_FILE_COOKIE = "sp_cookie";
     public static String TAG = "";

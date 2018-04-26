@@ -2,20 +2,27 @@ package com.stifler.basecommonmodule.demo.base.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.Window;
 
 import com.stifler.basecommonmodule.base.ui.IBindListener;
 import com.stifler.basecommonmodule.base.ui.IInitData;
 import com.stifler.basecommonmodule.base.ui.IInitView;
 import com.stifler.basecommonmodule.demo.DemoApplication;
+import com.stifler.basecommonmodule.demo.R;
 import com.stifler.basecommonmodule.demo.base.dagger.component.ActivityCommonComponent;
 import com.stifler.basecommonmodule.demo.base.dagger.component.DaggerActivityCommonComponent;
 import com.stifler.basecommonmodule.demo.base.dagger.module.ActivityCommonModule;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity implements IInitView,IInitData,
         IBindListener {
+
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,16 @@ public abstract class BaseActivity extends AppCompatActivity implements IInitVie
         initView();
         initData();
         bindListener();
+    }
+
+    @Override
+    public void bindListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override

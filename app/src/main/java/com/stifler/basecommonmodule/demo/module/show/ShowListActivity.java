@@ -9,10 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.stifler.basecommonmodule.demo.R;
+import com.stifler.basecommonmodule.demo.base.config.RouterConfig;
 import com.stifler.basecommonmodule.demo.base.dagger.module.ActivityCommonModule;
 import com.stifler.basecommonmodule.demo.base.ui.BaseActivity;
 import com.stifler.basecommonmodule.demo.module.show.adapter.ShowListAdapter;
@@ -28,6 +29,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 
+@Route(path = RouterConfig.ROUTER__ACVITITY_BRVAH)
 public class ShowListActivity extends BaseActivity implements BaseQuickAdapter.RequestLoadMoreListener,
         ShowListView,SwipeRefreshLayout.OnRefreshListener {
 

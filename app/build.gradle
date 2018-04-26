@@ -15,7 +15,9 @@ dependencies {
     //butterknife
     compile "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
-
+    //arouter
+    compile "com.alibaba:arouter-api:${rootProject.ext.arouterApi}"
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouterCompiler}"
 }
 
 android {
@@ -31,6 +33,12 @@ android {
         multiDexEnabled=true
         ndk{
             abiFilters "armeabi","armeabi-v7a"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
         }
     }
     repositories {

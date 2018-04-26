@@ -1,10 +1,13 @@
 package com.stifler.basecommonmodule.demo;
 
+import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.stifler.basecommonmodule.demo.base.config.RouterConfig;
+import com.stifler.basecommonmodule.demo.base.logic.RouterManager;
 import com.stifler.basecommonmodule.demo.base.ui.BaseActivity;
 import com.stifler.basecommonmodule.demo.module.cinema.CinemaListActivity;
 import com.stifler.basecommonmodule.demo.module.movie.MovieListActivity;
@@ -44,6 +47,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                RouterManager.getInstance().navigateToActivity(RouterConfig.ROUTER_ACVITITY_HOME);
+            }
+        },3000);
     }
 
     @Override

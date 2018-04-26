@@ -4,9 +4,9 @@ ext {
     ]
 
     minSdkVersion = 15
-    compileSdkVersion = 25
+    compileSdkVersion = 26
     targetSdkVersion = 25
-    buildToolsVersion = '25.0.2'
+    buildToolsVersion = '27.0.3'
 
     dagger2Version = '2.9'
     annotationVersion = '10.0-b28'
@@ -30,5 +30,6 @@ ext {
     baseRecyclerViewAdapterHelperVersion = '2.9.25'
     rxGalleryFinalVersion = '1.0.9'
     objectBoxVersion = '1.4.1'
-
+    arouterApi = '1.3.1'
+    arouterCompiler = '1.1.4'
 }

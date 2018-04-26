@@ -5,6 +5,7 @@ import com.stifler.basecommonmodule.dagger.component.ActivityComponent;
 import com.stifler.basecommonmodule.dagger.scope.ActivityScope;
 import com.stifler.basecommonmodule.demo.base.dagger.module.ActivityCommonModule;
 import com.stifler.basecommonmodule.demo.module.cinema.CinemaListActivity;
+import com.stifler.basecommonmodule.demo.module.main.HomeActivity;
 import com.stifler.basecommonmodule.demo.module.movie.MovieListActivity;
 import com.stifler.basecommonmodule.demo.module.show.ShowListActivity;
 
@@ -16,4 +17,5 @@ public interface ActivityCommonComponent extends ActivityComponent {
     void inject(CinemaListActivity activity);
     void inject(MovieListActivity activity);
     void inject(ShowListActivity activity);
+    void inject(HomeActivity activity);
 }
