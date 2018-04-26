@@ -8,4 +8,12 @@
         <item>发现</item>
         <item>我的</item>
     </string-array>
+
+    <string-array name="tab_icons">
+        <item>@drawable/tab_recommond_selector</item>
+        <item>@drawable/tab_movie_selector</item>
+        <item>@drawable/tab_show_selector</item>
+        <item>@drawable/tab_discover_selector</item>
+        <item>@drawable/tab_me_selector</item>
+    </string-array>
 </resources>

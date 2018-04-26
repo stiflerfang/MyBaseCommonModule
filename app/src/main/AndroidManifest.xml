@@ -72,13 +72,13 @@
         android:theme="@style/AppTheme.Base">
         <activity
             android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
-            android:theme="@style/AppTheme.Base"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Base"/>
+            android:theme="@style/AppTheme.Base" />
         <activity
             android:name="com.stifler.basecommonmodule.demo.MainActivity"
             android:screenOrientation="portrait"
@@ -103,6 +103,10 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name="com.stifler.basecommonmodule.demo.module.main.HomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.stifler.basecommonmodule.demo.module.main.TabLayoutAndViewPagerActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 

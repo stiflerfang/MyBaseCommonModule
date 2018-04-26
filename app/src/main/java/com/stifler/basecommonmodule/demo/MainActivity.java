@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void run() {
                 RouterManager.getInstance().navigateToActivity(RouterConfig.ROUTER_ACVITITY_HOME);
+                finish();
             }
         },3000);
     }

@@ -36,8 +36,8 @@ public abstract class BaseFragment extends Fragment implements IInitView,IInitDa
         ButterKnife.bind(this,rootView);
         initInject();
         initView();
-        initData();
         bindListener();
+        initData();
         return rootView;
     }
 
