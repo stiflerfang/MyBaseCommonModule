@@ -166,7 +166,7 @@ public static final int *;
   public *;
 }
 # for DexGuard only
-#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
 #eventbus
 -keep class de.greenrobot.event.** {*; }
